@@ -1,1 +1,1 @@
-# connecting-to-a-sql-database-project-tutorial
+# Connecting to a SQL Database Project Tutorial
