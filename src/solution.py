@@ -1,9 +1,4 @@
-# importing the reusable functions
-# We created the "connect" function on the file reusable_functions.py
-# and we are going to use it every time we want to connect to the database
-from reusable_functions import connect, run_file, run_query
-# importing pandas
-import pandas as pd
+
 
 # 1) Connect to the database here using the SQLAlchemy's create_engine function
 # connection_string = f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}?autocommit=true"
