@@ -57,8 +57,6 @@ Note: Please make sure to replace this values with your real database credential
 
 All your Python code must always be inside the `src` folder, this is also another good practice.
 
-If you open the `./src` folder you wil find a file called `reusable_functions` that contains 2 python functions inside `connect` and `run_file`:
-
 1. The `connect` function contains the necesary code to connect to your python database, if you watch carefully you will see how it loads all the environment variables into a `connection_string` variable and then it calls the `create_engine` and `connect` fuctions.
 
 ```py
@@ -72,15 +70,21 @@ def connect():
     return engine
 ```
 
-2. The `run_file` receives a `path` variable with the path to the SQL file you want to execute.
-
 ## 📝 Instructions
 
 1. Let's create a file inside the `src` folder called `./src/app.py`.
 
 > Note: This file will contain most of your application code; The database conection and the database queries.
 
-2. 
+2. Create a cloud database using Heroku as indicated in part 1.
+
+3. In your app.py connect to your database
+
+4. Create the tables indicated in `./src/sql/create.sql`
+
+5. Insert the data indicated in `./src/sql/insert.sql` to your recently created tables.
+
+6. Use pandas to print one of the tables as dataframes using read_sql function
 
 
 
