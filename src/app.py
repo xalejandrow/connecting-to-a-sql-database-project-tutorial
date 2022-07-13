@@ -1,12 +1,19 @@
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+import pymysql
+from sqlalchemy import create_engine
+import pandas as pd
+import psycopg2
 
 # 1) Connect to the database here using the SQLAlchemy's create_engine function
 """ import psycopg2 
 
-conn = psycopg2.connect(database='d9v1k7oo2sg6ov', 
-                        user='oxkaeubmnqxvxi', 
-                        password='26f907c61376056246af18a2d44bb8f5b861892ec63969926945ecae8e68deb4',
-                        host='ec2-18-214-134-226.compute-1.amazonaws.com',
+conn = psycopg2.connect(database=os.getenv('DB_NAME'), 
+                        user=os.getenv('DB_USER'), 
+                        password=os.getenv('DB_PASSWORD'),
+                        host=os.getenv('DB_HOST'),
                         port=5432)
 
 cursor = conn.cursor()
@@ -19,10 +26,10 @@ conn.close() """
 
 # 3) Execute the SQL sentences to insert your data using the SQLAlchemy's execute function
 """ import psycopg2 
-conn = psycopg2.connect(database='d9v1k7oo2sg6ov', 
-                        user='oxkaeubmnqxvxi', 
-                        password='26f907c61376056246af18a2d44bb8f5b861892ec63969926945ecae8e68deb4',
-                        host='ec2-18-214-134-226.compute-1.amazonaws.com',
+conn = psycopg2.connect(database=os.getenv('DB_NAME'), 
+                        user=os.getenv('DB_USER'), 
+                        password=os.getenv('DB_PASSWORD'),
+                        host=os.getenv('DB_HOST'),
                         port=5432)
 
 cursor = conn.cursor()
@@ -33,15 +40,16 @@ conn.commit()
 conn.close() """
 
 # 4) Use pandas to print one of the tables as dataframes using read_sql function
-import psycopg2
-import pandas as pd
 
-conn = psycopg2.connect(database='d9v1k7oo2sg6ov', 
-                        user='oxkaeubmnqxvxi', 
-                        password='26f907c61376056246af18a2d44bb8f5b861892ec63969926945ecae8e68deb4',
-                        host='ec2-18-214-134-226.compute-1.amazonaws.com',
+#print('getenv',os.getenv('DB_NAME'))
+
+
+conn = psycopg2.connect(database=os.getenv('DB_NAME'), 
+                        user=os.getenv('DB_USER'), 
+                        password=os.getenv('DB_PASSWORD'),
+                        host=os.getenv('DB_HOST'),
                         port=5432)
-
+                    
 cursor = conn.cursor()
 pd.read_sql("SELECT * FROM Movies",conn)
 conn.close()
